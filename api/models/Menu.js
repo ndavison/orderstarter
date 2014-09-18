@@ -9,10 +9,13 @@
 module.exports = {
 
   attributes: {
-    'menuId': {
+    'id': {
       type: 'string',
-      unique: true,
-      required: true
+      primaryKey: true,
+      unique: true
+    },
+    'password': {
+      type: 'string'
     },
     'title':  {
       type: 'string',
@@ -30,6 +33,16 @@ module.exports = {
       collection: 'Order',
       via: 'menu'
     }
+  },
+  
+  /**
+   * Generate a menuId automatically.
+   */
+  beforeCreate: function(values, cb) {
+    
+    values.id = MenuId.generate(5);
+    
+    cb();
   }
   
 };

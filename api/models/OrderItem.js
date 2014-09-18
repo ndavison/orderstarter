@@ -8,6 +8,13 @@
 module.exports = {
 
   attributes: {
+    'id': {
+      type: 'integer',
+      primaryKey: true,
+      require: true,
+      autoIncrement: true,
+      unique: true
+    },
     'order': {
       model: 'Order',
       required: true
