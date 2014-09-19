@@ -40,7 +40,7 @@ module.exports = {
    */
   beforeCreate: function(values, cb) {
     
-    values.id = MenuId.generate(5);
+    values.id = MenuId.generate(6);
     
     cb();
   }
