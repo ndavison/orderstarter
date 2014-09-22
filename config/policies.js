@@ -29,6 +29,16 @@ module.exports.policies = {
   // '*': true,
   
   OrderController: {
-    'create': 'hasPassword'
+    'create': 'hasPassword',
+    'destroy': 'hasPassword',
+    'update': 'hasPassword',
+    'findOne': 'hasPassword',
+    'find': 'hasPassword'
+  },
+  
+  MenuController: {
+    'update': 'hasPassword',
+    'destroy': 'hasPassword',
+    'update': 'hasPassword'
   }
 };

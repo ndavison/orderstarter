@@ -6,7 +6,7 @@
 module.exports = {
 
     generate: function(length) {
-        var range = 'ABCDEFGHKMNPQRSTWXYZ0123456789';
+        var range = 'ABCDEFGHKMNPQRSTWXYZ23456789';
         var menuId = '';
         
         for (var i = 0; i < length; i++) {
