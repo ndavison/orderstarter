@@ -26,19 +26,35 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': false,
   
   OrderController: {
     'create': 'hasPassword',
     'destroy': 'hasPassword',
     'update': 'hasPassword',
-    'findOne': 'hasPassword',
-    'find': 'hasPassword'
+    'findOne': 'hasPassword'
   },
   
   MenuController: {
     'update': 'hasPassword',
     'destroy': 'hasPassword',
-    'update': 'hasPassword'
+    'update': 'hasPassword',
+    'findOne': true,
+    'find': true,
+    'create': true
+  },
+  
+  MenuItemController: {
+    'create': 'hasPassword',
+    'destroy': 'hasPassword',
+    'update': 'hasPassword',
+    'findOne': 'hasPassword'
+  },
+  
+  OrderItemController: {
+    'create': 'hasPassword',
+    'destroy': 'hasPassword',
+    'update': 'hasPassword',
+    'findOne': 'hasPassword'
   }
 };
