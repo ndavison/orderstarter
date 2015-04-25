@@ -25,7 +25,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "debug": "node debug app.js"
+    "debug": "node debug app.js",
+    "test": "mocha"
   },
   "main": "app.js",
   "repository": {
@@ -33,5 +34,8 @@
     "url": "git://github.com/ndavison/orderstarter"
   },
   "author": "Nathan Davison",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "should": "^6.0.1"
+  }
 }
