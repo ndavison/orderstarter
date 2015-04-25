@@ -15,15 +15,11 @@ Represents a menu that users can choose from.
 
 ### /menuitem
 
-An item on a menu that can be chosen.
+An item on a `/menu` that can be chosen.
 
 ### /order
 
-Represents a collection of menuitems from a menu that have been chosen.
-
-### /orderitem
-
-An item chosen from the order's menuitem collection.
+Represents a collection of `/menuitems` from a `/menu` that have been chosen.
 
 ## TODO
 
