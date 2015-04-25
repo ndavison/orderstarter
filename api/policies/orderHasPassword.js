@@ -14,7 +14,7 @@ module.exports = function(req, res, next) {
         .findOne(menuId)
         .exec(function(err, menu) {
             if (!menu) return res.badRequest('No menu with this id exists.');
-            if (menu.password != password)  return res.forbidden('The password for this menu was incorrect.');
+            if (menu.password && menu.password != password) return res.forbidden('The password for this menu was incorrect.');
             next();
         });
     } else if (orderId) {    
@@ -23,9 +23,11 @@ module.exports = function(req, res, next) {
         .populate('menu')
         .exec(function(err, order) {
             if (!order) return res.badRequest('No order with this id exists.');
-            if (order.menu.password != password)  return res.forbidden('The password for this menu was incorrect.');
+            if (order.menu.password && order.menu.password != password) return res.forbidden('The password for this menu was incorrect.');
             next();
         });
+    } else {
+        next();
     }
     
 };
