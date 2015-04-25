@@ -8,6 +8,8 @@
 
 module.exports = {
 
+  idLength: 6,
+
   attributes: {
     'id': {
       type: 'string',
@@ -40,7 +42,7 @@ module.exports = {
    */
   beforeCreate: function(values, cb) {
     
-    values.id = MenuId.generate(6);
+    values.id = MenuId.generate(this.idLength);
     
     cb();
   }
