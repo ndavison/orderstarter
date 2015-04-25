@@ -1,4 +1,5 @@
 # Orderstarter 
+[![Build Status](https://travis-ci.org/ndavison/orderstarter.svg?branch=master)](https://travis-ci.org/ndavison/orderstarter)
 
 a [Sails](http://sailsjs.org) application
 
