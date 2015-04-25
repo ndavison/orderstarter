@@ -1,7 +1,7 @@
 /**
 * Order.js
 *
-* @description :: 
+* @description :: an order created from an existing menu and its menuitem collection.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
@@ -11,7 +11,6 @@ module.exports = {
     'id': {
       type: 'integer',
       primaryKey: true,
-      require: true,
       autoIncrement: true,
       unique: true
     },
@@ -20,8 +19,10 @@ module.exports = {
       required: true
     },
     'items': {
-      collection: 'OrderItem',
-      via: 'order'
+      collection: 'MenuItem',
+      via: 'orders',
+      required: true,
+      dominant: true
     },
     'name': {
       type: 'string',
