@@ -9,17 +9,14 @@
     var menuId = req.param('menu');
     
     if (menuId && items && items.length > 0) {
-        Menu
-        .findOne(menuId)
-        .populate('items')
-        .then(function(menu) {
-            MenuItem.find({menu: menuId, id: items}).then(function(foundItems) {
-                if (foundItems.length == items.length) {
-                    next();
-                } else {
-                    return res.badRequest('The items provided are not from the menu for this order.');
-                }
-            });
+        MenuItem
+        .find({menu: menuId, id: items})
+        .then(function(foundItems) {
+            if (foundItems.length == items.length) {
+                next();
+            } else {
+                return res.badRequest('The items provided are not from the menu for this order.');
+            }
         })
         .catch(function(err) {
             return res.serverError(err);
