@@ -23,5 +23,24 @@ describe('Menu model', function() {
         });
     });
     
+    describe('destroy()', function() {
+        it('should delete a menu without error.', function(done) {
+            Menu
+              .create({title: "A test menu", owner: "Joey Joe Joe"})
+              .then(function (menu) {
+                menu.should.have.property('id');
+                return menu;
+              })
+              .then(function (menu) {
+                menu.destroy().then(function (menu) { 
+                  Menu.findOne({id: menu.id}).then(function (menu) {
+                        (typeof menu).should.equal('undefined');
+                        done();
+                    })
+                });
+              });
+        });
+    });
+    
 });
  
