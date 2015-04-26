@@ -29,9 +29,9 @@ module.exports.policies = {
   '*': false,
   
   OrderController: {
-    'create': 'orderHasPassword',
+    'create': ['orderHasPassword', 'orderItemsMatchMenu'],
     'destroy': 'orderHasPassword',
-    'update': 'orderHasPassword',
+    'update': ['orderHasPassword', 'orderItemsMatchMenu'],
     'findOne': 'orderHasPassword',
     'find': 'orderHasPassword'
   },
