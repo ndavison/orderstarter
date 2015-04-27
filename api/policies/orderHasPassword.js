@@ -13,7 +13,7 @@ module.exports = function(req, res, next) {
         Menu
         .findOne(menuId)
         .exec(function(err, menu) {
-            if (!menu) return res.badRequest('No menu with this id exists.');
+            if (!menu) return res.notFound('No menu with this id exists.');
             if (menu.password && menu.password != password) return res.forbidden('The password for this menu was incorrect.');
             next();
         });
@@ -22,7 +22,7 @@ module.exports = function(req, res, next) {
         .findOne(orderId)
         .populate('menu')
         .exec(function(err, order) {
-            if (!order) return res.badRequest('No order with this id exists.');
+            if (!order) return res.notFound('No order with this id exists.');
             if (order.menu.password && order.menu.password != password) return res.forbidden('The password for this menu was incorrect.');
             next();
         });
