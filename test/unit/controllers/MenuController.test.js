@@ -2,7 +2,6 @@
  * MenuController unit tests.
  */
 
-
 var request = require('supertest');
 
 describe('/menu', function() {
